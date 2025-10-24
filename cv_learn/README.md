@@ -58,8 +58,8 @@ python linear_classifiers/train.py --model svm --epochs 12 -lr 0.1 --momentum 0.
 ```
 
 ## **Outputs**
-- '(out/<model>_W.npy)' — learned weights '((3072 , 10))'
-- '(out/<model>_weights.png)' — weight "templates" visualization (if '(--viz)')
+- `out/<model>_W.npy` — learned weights `(3072 , 10)`
+- `out/<model>_weights.png` — weight "templates" visualization (if `--viz`)
 - console prints : running loss , train/val acc per epoch , and 
 	``` 
 	Best val acc: <...> | Test acc: <...> 
@@ -67,14 +67,14 @@ python linear_classifiers/train.py --model svm --epochs 12 -lr 0.1 --momentum 0.
 where __best val__ acc is the highest validation accuracy during training ; the final __Test acc__ is evaluated using those best weights
 
 ## Common flags 
-- '(--epochs)' , '(--batch_size)'
-- '(--lr)' , '(--lr_decay)' , '('--momentum')'
-- ('--reg') (L2 strength)
-- ('--data_dir'),('--out_dir')
-- ('--num_val') , ('--num_test')
-- ('--small') (use smaller training subset)
-- ('--viz') (save weight images)
-> if you see a save error for the PNG , create the folder once : (' mkdir - p out').
+- `(--epochs)` , `(--batch_size)`
+- `(--lr)` , `(--lr_decay)` , `('--momentum')`
+- `--reg` (L2 strength)
+- `--data_dir`,`--out_dir`
+- `--num_val` , `--num_test`
+- `--small` (use smaller training subset)
+- `--viz` (save weight images)
+> if you see a save error for the PNG , create the folder once : ` mkdir - p out`
 
 
 ## File-by-File Explanation
@@ -137,16 +137,10 @@ End-to-end **training**:
 ## Key Formulas
 
 ### SVM (Hinge)
-\[
-m_{i,j} = \max(0,\ s_{i,j} - s_{i,y_i} + \Delta), \quad
-L = \frac{1}{N}\sum_i \sum_{j \ne y_i} m_{i,j} + \lambda \lVert W \rVert_2^2
-\]
+
 
 ### Softmax + Cross-Entropy
-\[
-p_{i,j} = \frac{e^{s_{i,j}}}{\sum_k e^{s_{i,k}}}, \quad
-L = -\frac{1}{N}\sum_i \log p_{i,y_i} + \lambda \lVert W \rVert_2^2
-\]
+
 
 
 
