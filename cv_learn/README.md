@@ -58,8 +58,8 @@ python linear_classifiers/train.py --model svm --epochs 12 -lr 0.1 --momentum 0.
 ```
 
 ## **Outputs**
-- ('out/<model>_W.npy') — learned weights ('(3072 , 10)')
-- ('out/<model>_weights.png') — weight "templates" visualization (if ('--viz'))
+- '(out/<model>_W.npy)' — learned weights '((3072 , 10))'
+- '(out/<model>_weights.png)' — weight "templates" visualization (if '(--viz)')
 - console prints : running loss , train/val acc per epoch , and 
 	``` 
 	Best val acc: <...> | Test acc: <...> 
@@ -67,8 +67,8 @@ python linear_classifiers/train.py --model svm --epochs 12 -lr 0.1 --momentum 0.
 where __best val__ acc is the highest validation accuracy during training ; the final __Test acc__ is evaluated using those best weights
 
 ## Common flags 
-- ('--epochs') , ('--batch_size')
-- ('--lr') , ('--lr_decay') , ('--momentum')
+- '(--epochs)' , '(--batch_size)'
+- '(--lr)' , '(--lr_decay)' , '('--momentum')'
 - ('--reg') (L2 strength)
 - ('--data_dir'),('--out_dir')
 - ('--num_val') , ('--num_test')
