@@ -8,14 +8,15 @@ Includes data loading & preprocessing, vectorized losses/gradients, SGD optimize
 ## Directory Structure
 
 cv_learn/
-└─ linear_classifiers/
-├─ data_utils.py # CIFAR-10 download, load, train/val/dev/test splits, mean/std normalization
-├─ svm.py # Multiclass SVM (hinge) loss + vectorized gradient
-├─ softmax.py # Softmax + Cross-Entropy loss + vectorized gradient
-├─ optim.py # SGD optimizer (+ optional momentum)
-├─ grad_check.py # Numerical (finite-difference) gradient checker
-├─ train.py # Training loop, accuracy, LR decay, checkpoint-by-best-val, weight viz, saving
- README.md
+└── linear_classifiers/
+    ├── data_utils.py   # Get data onto disk, into RAM, and into the right numeric shape/scale
+    ├── svm.py          # Multiclass SVM (hinge) loss + gradient (vectorized)
+    ├── softmax.py      # Softmax + Cross-Entropy loss + gradient (vectorized)
+    ├── optim.py        # SGD optimizer (+ optional momentum)
+    ├── grad_check.py   # Numerical (finite-diff) gradient checker
+    ├── train.py        # Training loop, val selection, test eval, weight viz, saving
+README.md       		# Docs, formulas, how to run, observations
+
 
 
 ---
@@ -47,7 +48,7 @@ CIFAR-10 will download automatically on first run to ./data/.
 
 ## **How to run**
 
-### **Train SVM (hinge) **
+### Train SVM (hinge) 
 ``` 
 python linear_classifiers/train.py --model svm --epochs 10 --viz
 ```
@@ -67,8 +68,8 @@ python linear_classifiers/train.py --model svm --epochs 12 -lr 0.1 --momentum 0.
 where __best val__ acc is the highest validation accuracy during training ; the final __Test acc__ is evaluated using those best weights
 
 ## Common flags 
-- `(--epochs)` , `(--batch_size)`
-- `(--lr)` , `(--lr_decay)` , `('--momentum')`
+- `--epochs` , `--batch_size`
+- `--lr` , `--lr_decay` , `--momentum`
 - `--reg` (L2 strength)
 - `--data_dir`,`--out_dir`
 - `--num_val` , `--num_test`
