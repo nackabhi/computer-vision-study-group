@@ -6,7 +6,7 @@ Includes data loading & preprocessing, vectorized losses/gradients, SGD optimize
 ---
 
 ## Directory Structure
-
+```
 cv_learn/
 └── linear_classifiers/
     ├── data_utils.py   # Get data onto disk, into RAM, and into the right numeric shape/scale
@@ -16,7 +16,7 @@ cv_learn/
     ├── grad_check.py   # Numerical (finite-diff) gradient checker
     ├── train.py        # Training loop, val selection, test eval, weight viz, saving
 README.md       		# Docs, formulas, how to run, observations
-
+```
 
 
 ---
