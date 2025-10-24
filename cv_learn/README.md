@@ -137,10 +137,24 @@ End-to-end **training**:
 
 ## Key Formulas
 
-### SVM (Hinge)
 
+### SVM (Hinge)
+```
+\[
+m_{i,j} = \max(0,\ s_{i,j} - s_{i,y_i} + \Delta), \qquad
+L = \frac{1}{N}\sum_{i}\sum_{j \ne y_i} m_{i,j} + \lambda \lVert W \rVert_2^2
+\]
+```
+---
 
 ### Softmax + Cross-Entropy
+```
+\[
+p_{i,j} = \frac{e^{s_{i,j}}}{\sum_k e^{s_{i,k}}}, \qquad
+L = -\frac{1}{N}\sum_i \log p_{i,y_i} + \lambda \lVert W \rVert_2^2
+\]
+```
+
 
 
 
